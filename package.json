@@ -4,7 +4,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Test\" && exit 1",
+    "test": "echo \"Test\" && exit 0",
     "start": "node server.js"
   },
   "repository": {
