@@ -1,0 +1,26 @@
+name: Docker Image CI
+
+on:
+  push:
+    branches: [ master ]
+  release:
+    types: [published]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: Login to DockerHub Registry
+        run: echo ${{ secrets.DOCKERHUB_PASSWORD }} | docker login -u ${{ secrets.DOCKERHUB_USERNAME }} --password-stdin
+      - name: Build the tagged Docker image
+        run: docker build . --file Dockerfile --tag dasbene/continuousdemo:$GITHUB_SHA
+      - name: Push the tagged Docker image
+        run: docker push dasbene/continuousdemo:$GITHUB_SHA
+      - name: Build the latest Docker image
+        run: docker build . --file Dockerfile --tag dasbene/continuousdemo:latest
+      - name: Push the latest Docker image
+        run: docker push dasbene/continuousdemo:latest
