@@ -1,0 +1,23 @@
+{
+  "name": "continuousx_api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Test\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dbene/ContinuousX_API.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dbene/ContinuousX_API/issues"
+  },
+  "homepage": "https://github.com/dbene/ContinuousX_API#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
