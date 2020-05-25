@@ -11,7 +11,7 @@ app.get('/', (req, res) => {
 app.post('/entry', (req, res) => {
     list.push(Date.now())
     console.log(list)
-    res.send("alles ok")
+    res.send("alles ist ok")
 })
 
 app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`))
